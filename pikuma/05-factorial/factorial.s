@@ -5,14 +5,25 @@
 
 Main:
 
-    li $t0, 5
+    li $a0, 5
+    jal Factorial
+    nop
 
+LoopForever:
+    j LoopForever
+    nop
+
+
+;; Compute Factorial
+;; Argument: num ($a0)
+;; $v0 = Factorial($a0)
+Factorial:
     li $t1, 1
     li $t2, 1
     li $t3, 1
 
     WhileOuter:
-        bgt $t1, $t0, EndWhileOuter
+        bgt $t1, $a0, EndWhileOuter
         nop
 
         li $t4, 0
@@ -39,5 +50,8 @@ Main:
     EndWhileOuter:
 
     move $v0, $t4
+
+    jr $ra            ; return to caller $ra is return address
+
 
 .close
