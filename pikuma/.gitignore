@@ -1,0 +1,4 @@
+*.bin
+*.ps-exe
+.sentry-native/
+
