@@ -130,3 +130,51 @@ Loop:
     ; ble / bleu Branch if less or equals    (signed/unsigned)
     ; bge / bgeu Branch if greater or equals (signed/unsigned)
 ```
+
+# Negative Numbers
+
+# Sign Extension
+
+# Logical Instructions
+
+# Bitshifting
+
+## logical
+
+ignores the sign bit
+
+```asm
+; sll shift left logical
+sll  $t0, $t0, 32
+sllr $t0, $t0, $a1
+
+; srl shift right logical
+srl  $to, $t0, 32
+srlr $to, $t0, $a1
+
+```
+
+## Arithmetic
+
+keeps the sign bit
+
+```asm
+; shift right arthimetic
+sra  $t0, $t0, 1
+srav $t0, $t0, %a1
+```
+
+
+## Rotate
+
+doesn't accept immediate number
+
+```asm
+
+; Rotate left
+rol $t0, $t1, $t3
+
+; Rotate right
+ror $t0, $t0, $a3
+```
+
