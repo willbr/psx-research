@@ -65,6 +65,15 @@ Label:
     ; *(*byte)(0x1810+$t0) = 0x12345678
 ```
 
+set a variable
+
+```asm
+score:    .word 0
+
+    la $t0, score
+    li $t1, 0xbeefcafe
+    sw $t1, 0($t0)
+```
 
 # Add & Substract Instructions
 
