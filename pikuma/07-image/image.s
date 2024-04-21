@@ -91,10 +91,7 @@ Main:
     ;; send pixel data word by word
     ;; calculate the number of words
     li   $t0, IMG_SIZE_BYTES
-    li   $t4, 4
-    div  $t0, $t4     ; $lo = $t0, $4
-    mflo $t0          ; $t0 = $lo      
-
+    srl  $t0, 2           ; t0 >> 2 ; t0/4
 
     la $t2, Image
 LoopWords:
